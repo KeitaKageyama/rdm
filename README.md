@@ -5,7 +5,7 @@ yarn install
 
 npm run dev
 # or
-yarn dev
+yarn run dev
 ```
 
 yarn devをすると [http://localhost:3434](http://localhost:3434) で動作確認することができます。
