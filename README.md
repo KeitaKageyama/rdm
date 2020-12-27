@@ -1,34 +1,69 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
-
-## Getting Started
-
-First, run the development server:
+## スタート方法
 
 ```bash
+yarn install 
+
 npm run dev
 # or
 yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+yarn devをすると [http://localhost:3434](http://localhost:3434) で動作確認することができます。
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+## 使用技術について
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+-  [Next.js](https://nextjs.org/)
+-  [chakra-ui](https://chakra-ui.com/)
+-  [styled-components](https://styled-components.com/)
+-  [yup](https://github.com/jquense/yup)
+-  [React-hook-form](https://react-hook-form.com/)
+-  [firebaseまだ設定してない]()
+-  [ES-lint入れてるけどcommitと同時実行などはまだ](https://eslint.org/)
+後欲しいのあれば各自で入れる感じで。
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## ３つの特殊なコンポーネント
 
-## Learn More
+下記二つのコンポーネントは一応用意したけどchakra-uiで代用できるかも、、
+使ってみてから判断しようかな、じゅんじゅんに相談！！
 
-To learn more about Next.js, take a look at the following resources:
+- Textコンポーネント　src/components/lib/text.tsx
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+使い方
+```
+//基本的に h1,h2,p　などは使わず文字はこれもしくはchakra-uiのTextでもいいかも
+<Text>hogehoge</Text>
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- ViewコンポーネントとFlexboxコンポーネント　/src/components/lib/view.tsx
 
-## Deploy on Vercel
+使い方
+```
+//基本的に divは使わずどちらか chakra-uiのFlexでもいいかも
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/import?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<View>
+  <Text>hogehoge</Text>
+  <Text>hogehoge</Text>
+</View>
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+//縦並びの場合
+<Flexbox>
+  <Text>hogehoge</Text>
+  <Text>hogehoge</Text>
+</Flexbox>
+
+//横並びの場合
+<Flexbox　horizontal>
+  <Text>hogehoge</Text>
+  <Text>hogehoge</Text>
+</Flexbox>
+```
+
+- Spacerコンポーネント　/src/components/Spacer/Spacer.tsx
+
+使い方
+```
+//コンポーネント間のスペースを取りたいときはこれ　基本marginは使わない
+//サイズは size={30}などの数字でも取れる
+<Spacer size="xl" />
+```
+
