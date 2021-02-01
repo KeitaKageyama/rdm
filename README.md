@@ -29,9 +29,10 @@ yarn devをすると [http://localhost:3434](http://localhost:3434) で動作確
 
 使い方
 ```
-//基本的に h1,h2,p　などは使わずchakra-uiのTextかHeaderを使う
+//基本的に h1,h2,p　などは使わずchakra-uiのTextかHeadingを使う
 <Text>hogehoge</Text>
-<Header>hogeohge</Header>
+//SEOに関係ある<h1>タグなどはこれ
+<Heading>hogeohge</Heading>
 ```
 
 - BoxコンポーネントとFlexboxコンポーネント
