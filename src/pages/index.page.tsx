@@ -53,21 +53,31 @@ const Top: NextPage<Props> = ({ topRated, nowPlaying, popular }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const topRatedPromise: AxiosResponse = await axios.get(process.env.TOP_RATED);
-  const nowPlayingPromise: AxiosResponse = await axios.get(
-    process.env.NOW_PLAYING
-  );
-  const popularPromise: AxiosResponse = await axios.get(process.env.POPULAR);
+  const [
+    topRatedPromise,
+    popularPromise,
+    nowPlayingPromise,
+  ]: AxiosResponse[] = await Promise.all([
+    axios.get(process.env.TOP_RATED).catch((e) => {
+      throw "topRated error " + e.message;
+    }),
+    axios.get(process.env.POPULAR).catch((e) => {
+      throw "popular error " + e.message;
+    }),
+    axios.get(process.env.NOW_PLAYING).catch((e) => {
+      throw "nowPlaying error " + e.message;
+    }),
+  ]);
 
   const topRated = await topRatedPromise.data.results;
-  const nowPlaying = await nowPlayingPromise.data.results;
   const popular = await popularPromise.data.results;
+  const nowPlaying = await nowPlayingPromise.data.results;
 
   return {
     props: {
       topRated,
-      nowPlaying,
       popular,
+      nowPlaying,
     },
   };
 };
