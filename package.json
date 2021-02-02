@@ -12,6 +12,7 @@
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
     "@hookform/resolvers": "^1.1.1",
+    "@material-ui/styles": "^4.11.3",
     "@next/bundle-analyzer": "^9.5.3",
     "@types/react-query": "^1.1.2",
     "axios": "^0.21.1",
