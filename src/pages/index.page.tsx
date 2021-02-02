@@ -2,6 +2,7 @@ import React from "react";
 import { Text, View } from "src/components/lib";
 import { paths } from "src/constants/paths";
 import { NextPage, GetStaticProps } from "next";
+import { Carousel } from "src/components/Carousel";
 import Link from "next/link";
 import axios, { AxiosResponse } from "axios";
 
@@ -21,6 +22,7 @@ const Top: NextPage<Props> = ({ topRated, nowPlaying, popular }) => {
     <>
       <Text>TOPページ</Text>
       <Link href={paths.moveList}>映画一覧へ</Link>
+      <Carousel />
       {topRated.map((value: MoveData, index: number) => (
         <div key={index}>
           <p>{value.title}</p>
