@@ -5,13 +5,16 @@ import {
   Flex,
   Spacer,
   Icon,
+  IconButton,
 } from "@chakra-ui/react";
 import React, { useState, useEffect, FC } from "react";
 import styled from "styled-components";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
-import { IoLogoFacebook } from "react-icons/io"
-import { IoLogoTwitter } from "react-icons/io"
-import { IoLogoInstagram } from "react-icons/io"
+import { 
+  IoLogoFacebook,
+  IoLogoTwitter,
+  IoLogoInstagram,
+ } from "react-icons/io"
 
 export const Footer: FC = () => {
   return (
@@ -41,11 +44,26 @@ export const Footer: FC = () => {
       </Flex>
       <Space size={15}/>
       <Flex>
-        <Icon as={IoLogoFacebook} />
+        <IconButton
+          variant="link"
+          fontSize="25px"
+          aria-label="FacebookIcon"
+          icon={<Icon as={IoLogoFacebook} />}
+        />
         <Space size={15} horizontal/>
-        <Icon as={IoLogoTwitter} />
+        <IconButton
+          variant="link"
+          fontSize="25px"
+          aria-label="TwitterIcon"
+          icon={<Icon as={IoLogoTwitter} />}
+        />
         <Space size={15} horizontal/>
-        <Icon as={IoLogoInstagram} />
+        <IconButton
+          variant="link"
+          fontSize="25px"
+          aria-label="InstagramIcon"
+          icon={<Icon as={IoLogoInstagram} />}
+        />
       </Flex>
     </FooterBox>
   );
