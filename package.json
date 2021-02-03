@@ -8,6 +8,7 @@
     "build": "next build"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^1.0.4",
     "@chakra-ui/react": "^1.0.4",
     "@emotion/react": "^11.1.4",
     "@emotion/styled": "^11.0.0",
@@ -23,6 +24,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-hook-form": "^6.12.2",
+    "react-icons": "^4.1.0",
     "react-query": "^2.26.3",
     "styled-components": "^5.2.1",
     "styled-system": "^5.1.5",
