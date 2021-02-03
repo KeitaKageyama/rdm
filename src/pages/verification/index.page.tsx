@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, FC } from "react";
 import {
   Flex,
@@ -56,5 +57,36 @@ const ContentsArea = styled(Box)`
   background: #505050;
   min-height: 100vh;
 `;
+=======
+import React, {FC} from "react";
+import {
+  Box,
+  Link,
+  Text,
+  Flex,
+  Spacer,
+  Icon,
+  IconButton,
+} from "@chakra-ui/react";
+import { NextPage } from "next";
+import { Spacer as Space } from "src/components/Spacer/Spacer";
+
+
+const Verification:NextPage = () => {
+  return(
+  <Flex>
+    <QrArea/>
+    <Space size={30} horizontal/>
+    <QrArea/>
+  </Flex>);
+};
+
+const QrArea: FC = () => {
+
+  return (
+  <Text>アイウエオai1</Text>
+  )
+}
+>>>>>>> QRコンポーメントを作る
 
 export default Verification;
