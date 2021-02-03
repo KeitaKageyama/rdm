@@ -47,6 +47,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
+          color="fff"
           aria-label="FacebookIcon"
           icon={<Icon as={IoLogoFacebook} />}
         />
@@ -54,6 +55,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
+          color="fff"
           aria-label="TwitterIcon"
           icon={<Icon as={IoLogoTwitter} />}
         />
@@ -61,6 +63,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
+          color="fff"
           aria-label="InstagramIcon"
           icon={<Icon as={IoLogoInstagram} />}
         />
