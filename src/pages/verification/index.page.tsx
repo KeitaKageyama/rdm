@@ -70,23 +70,49 @@ import {
 } from "@chakra-ui/react";
 import { NextPage } from "next";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
+import styled from "styled-components";
 
 
 const Verification:NextPage = () => {
   return(
-  <Flex>
+  <Flexbox>
     <QrArea/>
     <Space size={30} horizontal/>
     <QrArea/>
-  </Flex>);
+  </Flexbox>);
 };
 
 const QrArea: FC = () => {
 
   return (
-  <Text>アイウエオai1</Text>
+    <Qrback>
+      <Whitetext>一人目</Whitetext>
+      <Space size={30}/>
+      <Whitetext>日程</Whitetext>
+      <Space size={10} horizontal/>
+      <Whitetext>2020/12/08</Whitetext>
+      <Whitetext>上映時間  19:00</Whitetext>
+      <Whitetext>タイトル  STAND BY ME　ドラえもん</Whitetext>
+      <Whitetext>座席  L32</Whitetext>
+    </Qrback>
   )
 }
 >>>>>>> QRコンポーメントを作る
 
+const Qrback = styled(Box)`
+ font-size: 14px;
+ bottom: 0;
+ background:#222;
+ width: 600px;
+ height: 300px;
+ margin-left: 20%;
+ margin-bottom: 20px;
+`
+const Whitetext = styled(Text)`
+  color: #fbfbfb;
+`
+const Flexbox = styled(Flex)`
+  flex-wrap: wrap;
+	justify-content: space-between;
+`
 export default Verification;
