@@ -77,7 +77,6 @@ const Verification:NextPage = () => {
   return(
   <Flexbox>
     <QrArea/>
-    <Space size={30} horizontal/>
     <QrArea/>
   </Flexbox>);
 };
@@ -86,9 +85,11 @@ const QrArea: FC = () => {
 
   return (
     <Qrback>
-      <Whitetext>一人目</Whitetext>
-      <Space size={70} horizontal/>
       <Fbox>
+        <Fwrap>
+          <Whitetext>一人目</Whitetext>
+          <Space size={70} horizontal/>
+        </Fwrap>
         <Fwrap>
           <Whitetext>日程</Whitetext>
           <Space size={67} horizontal/>
@@ -110,8 +111,8 @@ const QrArea: FC = () => {
           <Whitetext>L32</Whitetext>
         </Fwrap>
       </Fbox>
-      <Smalltext><Space size={50} horizontal/>※15分前より開場しますのでお早めにお越しください。</Smalltext>
-      <Smalltext><Space size={50} horizontal/>※キャンセルできませんのでご注意ください。</Smalltext>
+      <Smalltext>※15分前より開場しますのでお早めにお越しください。</Smalltext>
+      <Smalltext>※キャンセルできませんのでご注意ください。</Smalltext>
     </Qrback>
   )
 }
@@ -120,19 +121,22 @@ const QrArea: FC = () => {
 const Qrback = styled(Box)`
  bottom: 0;
  background:#222;
- width: 600px;
- height: 300px;
+ width: 1000px;
+ height: 450px;
  margin: 0 auto;
 `
 const Fbox = styled(Flex)`
   flex-wrap: wrap;
   justify-content: center;
   text-align:center;
+  padding-left:620px;
+  padding-top:50px;
 `
 const Fwrap = styled(Flex)`
   width:500px;
   height: 20px;
   flex:wrap;
+  margin-bottom:20px;
 `
 const Whitetext = styled(Text)`
   font-size: 14px;
@@ -146,5 +150,6 @@ const Flexbox = styled(Flex)`
 const Smalltext = styled(Text)`
   font-size: 8px;
   color:#fbfbfb;
+  padding-left:620px;
 `
 export default Verification;
