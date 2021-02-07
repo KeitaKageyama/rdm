@@ -87,32 +87,64 @@ const QrArea: FC = () => {
   return (
     <Qrback>
       <Whitetext>一人目</Whitetext>
-      <Space size={30}/>
-      <Whitetext>日程</Whitetext>
-      <Space size={10} horizontal/>
-      <Whitetext>2020/12/08</Whitetext>
-      <Whitetext>上映時間  19:00</Whitetext>
-      <Whitetext>タイトル  STAND BY ME　ドラえもん</Whitetext>
-      <Whitetext>座席  L32</Whitetext>
+      <Space size={70} horizontal/>
+      <Fbox>
+        <Fwrap>
+          <Whitetext>日程</Whitetext>
+          <Space size={67} horizontal/>
+          <Whitetext>2020/12/08</Whitetext>
+        </Fwrap>
+        <Fwrap>
+          <Whitetext>上映時間</Whitetext>
+          <Space size={40} horizontal/>
+          <Whitetext>19:00</Whitetext>
+        </Fwrap>
+        <Fwrap>
+          <Whitetext>タイトル</Whitetext>
+          <Space size={40} horizontal/>
+          <Whitetext>STAND BY ME　ドラえもん</Whitetext>
+        </Fwrap>
+        <Fwrap>
+          <Whitetext>座席</Whitetext>
+          <Space size={67} horizontal/>
+          <Whitetext>L32</Whitetext>
+        </Fwrap>
+      </Fbox>
+      <Smalltext><Space size={50} horizontal/>※15分前より開場しますのでお早めにお越しください。</Smalltext>
+      <Smalltext><Space size={50} horizontal/>※キャンセルできませんのでご注意ください。</Smalltext>
     </Qrback>
   )
 }
 >>>>>>> QRコンポーメントを作る
 
 const Qrback = styled(Box)`
- font-size: 14px;
  bottom: 0;
  background:#222;
  width: 600px;
  height: 300px;
- margin-left: 20%;
- margin-bottom: 20px;
+ margin: 0 auto;
+`
+const Fbox = styled(Flex)`
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align:center;
+`
+const Fwrap = styled(Flex)`
+  width:500px;
+  height: 20px;
+  flex:wrap;
 `
 const Whitetext = styled(Text)`
+  font-size: 14px;
   color: #fbfbfb;
+  font-weight:900;
 `
 const Flexbox = styled(Flex)`
   flex-wrap: wrap;
 	justify-content: space-between;
+`
+const Smalltext = styled(Text)`
+  font-size: 8px;
+  color:#fbfbfb;
 `
 export default Verification;
