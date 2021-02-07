@@ -24,39 +24,36 @@ yarn devをすると [http://localhost:3434](http://localhost:3434) で動作確
 
 ## ３つの特殊なコンポーネント
 
-下記二つのコンポーネントは一応用意したけどchakra-uiで代用できるかも、、
-使ってみてから判断しようかな、じゅんじゅんに相談！！
 
-- Textコンポーネント　src/components/lib/text.tsx
+- 文字コンポーネント
 
 使い方
 ```
-//基本的に h1,h2,p　などは使わず文字はこれもしくはchakra-uiのTextでもいいかも
+//基本的に h1,h2,p　などは使わずchakra-uiのTextかHeadingを使う
 <Text>hogehoge</Text>
+//SEOに関係ある<h1>タグなどはこれ
+<Heading>hogeohge</Heading>
 ```
 
-- ViewコンポーネントとFlexboxコンポーネント　/src/components/lib/view.tsx
+- BoxコンポーネントとFlexboxコンポーネント
 
 使い方
 ```
-//基本的に divは使わずどちらか chakra-uiのFlexでもいいかも
+//基本的に divは使わずどちらか chakra-uiのFlexかBoxなどをつかう
+https://chakra-ui.com/docs/layout/box
+https://chakra-ui.com/docs/layout/flex
 
-<View>
+<Box>
   <Text>hogehoge</Text>
   <Text>hogehoge</Text>
-</View>
+</Box>
 
-//縦並びの場合
-<Flexbox>
-  <Text>hogehoge</Text>
-  <Text>hogehoge</Text>
-</Flexbox>
 
 //横並びの場合
-<Flexbox　horizontal>
+<Flex>
   <Text>hogehoge</Text>
   <Text>hogehoge</Text>
-</Flexbox>
+</Flex>
 ```
 
 - Spacerコンポーネント　/src/components/Spacer/Spacer.tsx
