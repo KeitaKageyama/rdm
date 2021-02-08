@@ -4,6 +4,7 @@ import { theme } from "src/styles/theme";
 import { Header } from "src/components/Header";
 import { AppProps } from "next/app";
 import { Footer } from "src/components/Footer";
+import "../../styles/globals.css";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   return (
