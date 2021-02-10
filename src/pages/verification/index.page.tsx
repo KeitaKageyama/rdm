@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect, FC } from "react";
 import {
   Flex,
@@ -38,7 +37,11 @@ const Verification: NextPage = () => {
         </Text>
       </Box>
       <Space size={20} />
-
+      <Flexbox>
+        <QrArea/>
+        <Space size={40}/>
+        <QrArea/>
+    </Flexbox>);
       <Link href={paths.index}>
         <Text
           color="#fff"
@@ -57,66 +60,47 @@ const ContentsArea = styled(Box)`
   background: #505050;
   min-height: 100vh;
 `;
-=======
-import React, {FC} from "react";
-import {
-  Box,
-  Link,
-  Text,
-  Flex,
-  Spacer,
-  Icon,
-  IconButton,
-} from "@chakra-ui/react";
-import { NextPage } from "next";
-import { Spacer as Space } from "src/components/Spacer/Spacer";
-import styled from "styled-components";
-
-
-const Verification:NextPage = () => {
-  return(
-  <Flexbox>
-    <QrArea/>
-    <QrArea/>
-  </Flexbox>);
-};
 
 const QrArea: FC = () => {
 
   return (
     <Qrback>
       <Fbox>
-        <Fwrap>
-          <Whitetext>一人目</Whitetext>
-          <Space size={70} horizontal/>
-        </Fwrap>
-        <Fwrap>
-          <Whitetext>日程</Whitetext>
-          <Space size={67} horizontal/>
-          <Whitetext>2020/12/08</Whitetext>
-        </Fwrap>
-        <Fwrap>
-          <Whitetext>上映時間</Whitetext>
-          <Space size={40} horizontal/>
-          <Whitetext>19:00</Whitetext>
-        </Fwrap>
-        <Fwrap>
-          <Whitetext>タイトル</Whitetext>
-          <Space size={40} horizontal/>
-          <Whitetext>STAND BY ME　ドラえもん</Whitetext>
-        </Fwrap>
-        <Fwrap>
-          <Whitetext>座席</Whitetext>
-          <Space size={67} horizontal/>
-          <Whitetext>L32</Whitetext>
-        </Fwrap>
+        <Box>
+          <Image src="./images/qrcode.png"/>
+        </Box>
+        <Box>
+          <Fwrap>
+            <Whitetext>一人目</Whitetext>
+            <Space size={70} horizontal/>
+          </Fwrap>
+          <Fwrap>
+            <Whitetext>日程</Whitetext>
+            <Space size={67} horizontal/>
+            <Whitetext>2020/12/08</Whitetext>
+          </Fwrap>
+          <Fwrap>
+            <Whitetext>上映時間</Whitetext>
+            <Space size={40} horizontal/>
+            <Whitetext>19:00</Whitetext>
+          </Fwrap>
+          <Fwrap>
+            <Whitetext>タイトル</Whitetext>
+            <Space size={40} horizontal/>
+            <Whitetext>STAND BY ME　ドラえもん</Whitetext>
+          </Fwrap>
+          <Fwrap>
+            <Whitetext>座席</Whitetext>
+            <Space size={67} horizontal/>
+            <Whitetext>L32</Whitetext>
+          </Fwrap>
+          <Smalltext>※15分前より開場しますのでお早めにお越しください。</Smalltext>
+          <Smalltext>※キャンセルできませんのでご注意ください。</Smalltext>
+        </Box>
       </Fbox>
-      <Smalltext>※15分前より開場しますのでお早めにお越しください。</Smalltext>
-      <Smalltext>※キャンセルできませんのでご注意ください。</Smalltext>
     </Qrback>
   )
 }
->>>>>>> QRコンポーメントを作る
 
 const Qrback = styled(Box)`
  bottom: 0;
@@ -126,11 +110,9 @@ const Qrback = styled(Box)`
  margin: 0 auto;
 `
 const Fbox = styled(Flex)`
-  flex-wrap: wrap;
-  justify-content: center;
-  text-align:center;
-  padding-left:620px;
-  padding-top:50px;
+  justify-content: space-between;
+  align-items:center;
+  padding-left:60px;
 `
 const Fwrap = styled(Flex)`
   width:500px;
@@ -150,6 +132,5 @@ const Flexbox = styled(Flex)`
 const Smalltext = styled(Text)`
   font-size: 8px;
   color:#fbfbfb;
-  padding-left:620px;
 `
 export default Verification;
