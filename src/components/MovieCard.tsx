@@ -16,11 +16,12 @@ export const MovieCard: FC<Props> = ({ ...props }) => {
       href={{ pathname: paths.detail, query: { title, imagePath, overview } }}
     >
       <div>
-        <p>{title}</p>
         <img
           src={`https://image.tmdb.org/t/p/w185/${imagePath}`}
           alt="poster"
+          width="80%"
         />
+        <p>{title}</p>
       </div>
     </Link>
   );
