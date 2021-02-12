@@ -1,13 +1,14 @@
 import { 
   Box,
   Flex,
-  Heading
+  Heading,
  } from "@chakra-ui/react"
 import { Text, View } from "src/components/lib";
 import { paths } from "src/constants/paths";
 import { NextPage, GetStaticProps } from "next";
 import { Carousel } from "src/components/Carousel";
 import { MovieCard } from "src/components/MovieCard";
+import { Spacer as Space } from "src/components/Spacer/Spacer";
 import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
 
@@ -31,7 +32,8 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
       <Link href={paths.moveList}>映画一覧へ</Link>
       <Carousel />
       <Box maxWidth="1000px" margin="50px auto 100px" >
-        <Heading>おすすめ映画</Heading>
+        <Heading color="#FBFBFB">おすすめ映画</Heading>
+        <Space size={15}/>
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
           {recommend.map((value: MovieData, index: number) => (
@@ -47,11 +49,12 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto" >
-        <Heading>公開中映画</Heading>
+        <Heading color="#FBFBFB">公開中映画</Heading>
+        <Space size={15}/>
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 公開中表示 */}
           {nowPlaying.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" >
               <MovieCard
                 key={index}
                 title={value.title}
@@ -63,7 +66,8 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto 100px" >
-        <Heading>人気の映画</Heading>
+        <Heading color="#FBFBFB">人気の映画</Heading>
+        <Space size={15}/>
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 人気の表示 */}
           {popular.map((value: MovieData, index: number) => (
