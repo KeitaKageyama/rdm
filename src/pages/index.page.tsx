@@ -5,6 +5,8 @@ import { Carousel } from "src/components/Carousel";
 import { MovieCard } from "src/components/MovieCard";
 import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
+import { Flex, Spacer, Box, Button, Heading, Image } from "@chakra-ui/react";
+import { Spacer as Space } from "src/components/Spacer/Spacer";
 
 type MovieData = {
   title: string;
@@ -25,33 +27,39 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
       <Text>TOPページ</Text>
       <Link href={paths.moveList}>映画一覧へ</Link>
       <Carousel />
+      <Box w=" 300px" margin="0 auto">
+        <video playsInline controls width="100%" src="./images/test1.mov" />
+        <Space size={100} />
+        <video playsInline controls width="100%" src="./images/test2.mp4" />
+      </Box>
+
       {/* おすすめ表示 */}
-      {recommend.map((value: MovieData, index: number) => (
+      {/* {recommend.map((value: MovieData, index: number) => (
         <MovieCard
           key={index}
           title={value.title}
           imagePath={value.poster_path}
           overview={value.overview}
         />
-      ))}
+      ))} */}
       {/* 公開中表示 */}
-      {nowPlaying.map((value: MovieData, index: number) => (
+      {/* {nowPlaying.map((value: MovieData, index: number) => (
         <MovieCard
           key={index}
           title={value.title}
           imagePath={value.poster_path}
           overview={value.overview}
         />
-      ))}
+      ))} */}
       {/* 人気の表示 */}
-      {popular.map((value: MovieData, index: number) => (
+      {/* {popular.map((value: MovieData, index: number) => (
         <MovieCard
           key={index}
           title={value.title}
           imagePath={value.poster_path}
           overview={value.overview}
         />
-      ))}
+      ))} */}
     </>
   );
 };
