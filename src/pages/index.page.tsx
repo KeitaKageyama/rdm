@@ -7,6 +7,7 @@ import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
 import { Flex, Spacer, Box, Button, Heading, Image } from "@chakra-ui/react";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
+import React, { useState, useEffect, FC } from "react";
 
 type MovieData = {
   title: string;
@@ -22,6 +23,13 @@ type Props = {
 };
 
 const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
+  useEffect(() => {
+    const inputMovie = document.getElementsByTagName("video");
+    if (inputMovie && inputMovie[0]) {
+      inputMovie[0].load();
+    }
+  }, []);
+
   return (
     <>
       <Text>TOPページ</Text>
