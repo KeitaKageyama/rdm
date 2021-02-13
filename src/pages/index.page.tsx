@@ -40,14 +40,14 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
           playsInline
           controls
           width="100%"
-          src="./images/test1.mov　#t=0.001"
+          src="./images/test1.mov #t=0.001"
         />
         <Space size={100} />
         <video
           playsInline
           controls
           width="100%"
-          src="./images/test2.mp4　#t=0.001"
+          src="./images/test2.mp4 #t=0.001"
         />
       </Box>
 
