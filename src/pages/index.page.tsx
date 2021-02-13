@@ -36,9 +36,19 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
       <Link href={paths.moveList}>映画一覧へ</Link>
       <Carousel />
       <Box w=" 300px" margin="0 auto">
-        <video playsInline controls width="100%" src="./images/test1.mov" />
+        <video
+          playsInline
+          controls
+          width="100%"
+          src="./images/test1.mov#t=0.1"
+        />
         <Space size={100} />
-        <video playsInline controls width="100%" src="./images/test2.mp4" />
+        <video
+          playsInline
+          controls
+          width="100%"
+          src="./images/test2.mp4#t=0.1"
+        />
       </Box>
 
       {/* おすすめ表示 */}
