@@ -68,6 +68,9 @@ export const Footer: FC = () => {
           icon={<Icon as={IoLogoInstagram} />}
         />
       </Flex>
+      <Flex>
+        <Copy>©RANDUM MOVIE</Copy>
+      </Flex>
     </FooterBox>
   );
 };
@@ -75,5 +78,8 @@ export const Footer: FC = () => {
 const FooterBox = styled(Box)`
  font-size: 14px;
  bottom: 0;
+`
+const Copy = styled(Text)`
+ margin: 0 auto;
 `
 

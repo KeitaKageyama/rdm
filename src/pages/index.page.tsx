@@ -48,7 +48,7 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
           ))}
         </Flex>
       </Box>
-      <Box maxWidth="1000px" margin="50px auto" >
+      <Box maxWidth="1000px" margin="50px auto 100px" >
         <Heading color="#FBFBFB">公開中映画</Heading>
         <Space size={15}/>
         <Flex justifyContent="space-between" flexWrap="wrap">
