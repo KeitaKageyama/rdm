@@ -39,7 +39,7 @@ const Verification: NextPage = () => {
       <Space size={20} />
       <Flexbox>
         <QrArea/>
-        <Space size={40}/>
+        <Space size={600}/>
         <QrArea/>
     </Flexbox>);
       <Link href={paths.index}>
@@ -109,7 +109,6 @@ const Qrback = styled(Box)`
  width: 1000px;
  height: 450px;
  margin: 0 auto;
- margin-bottom:100px;
 `
 const Fbox = styled(Flex)`
   justify-content: space-between;
