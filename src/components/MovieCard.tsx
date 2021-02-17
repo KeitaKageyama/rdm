@@ -1,6 +1,3 @@
-import {
-  Box,
-} from "@chakra-ui/react";
 import { FC } from "react";
 import { paths } from "src/constants/paths";
 import Link from "next/link";
@@ -19,20 +16,18 @@ export const MovieCard: FC<Props> = ({ ...props }) => {
     <Link
       href={{ pathname: paths.detail, query: { title, imagePath, overview } }}
     >
-      <MovieHover>
         <div>
-          <img
+          <MovieImage
             src={`https://image.tmdb.org/t/p/w185/${imagePath}`}
             alt="poster"
             width="80%"
           />
           <p>{title}</p>
         </div>
-      </MovieHover>
     </Link>
   );
 };
 
-const MovieHover = styled(Box)`
+const MovieImage = styled.img`
  cursor : pointer;
 `
