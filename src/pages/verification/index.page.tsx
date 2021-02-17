@@ -52,6 +52,7 @@ const Verification: NextPage = () => {
           TOP画面へ戻る
         </Text>
       </Link>
+      <Space size={100}/>
     </ContentsArea>
   );
 };
@@ -108,11 +109,13 @@ const Qrback = styled(Box)`
  width: 1000px;
  height: 450px;
  margin: 0 auto;
+ margin-bottom:100px;
 `
 const Fbox = styled(Flex)`
   justify-content: space-between;
   align-items:center;
-  padding-left:60px;
+  padding-left:80px;
+  padding-top:100px;
 `
 const Fwrap = styled(Flex)`
   width:500px;
