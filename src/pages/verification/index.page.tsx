@@ -39,8 +39,9 @@ const Verification: NextPage = () => {
       <Space size={20} />
       <Flexbox>
         <QrArea/>
-        <Space size={600}/>
+        <Space size={500}/>
         <QrArea/>
+        <Space size={500}/>
     </Flexbox>);
       <Link href={paths.index}>
         <Text
