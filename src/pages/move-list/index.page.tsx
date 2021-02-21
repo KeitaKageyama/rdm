@@ -1,9 +1,5 @@
 import React from "react";
-import { 
-  Box,
-  Flex,
-  Heading,
- } from "@chakra-ui/react"
+import { Box, Flex, Heading } from "@chakra-ui/react";
 import { NextPage, GetStaticProps } from "next";
 import { MovieCard } from "src/components/MovieCard";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
@@ -23,14 +19,14 @@ type Props = {
 const MoveList: NextPage<Props> = ({ popular }) => {
   return (
     <>
-      <Box maxWidth="1000px" margin="50px auto" >
+      <Box maxWidth="1000px" margin="50px auto">
         <Heading color="#FBFBFB">公開中映画</Heading>
-        <Space size={15}/>
+        <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 映画一覧表示 */}
           {popular.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px" >
-                <MovieCard
+            <Box w="250px" h="350px">
+              <MovieCard
                 key={index}
                 title={value.title}
                 imagePath={value.poster_path}
