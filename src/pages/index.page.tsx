@@ -1,8 +1,6 @@
-import { 
-  Box,
-  Flex,
-  Heading,
- } from "@chakra-ui/react"
+import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Text, View } from "src/components/lib";
+import { paths } from "src/constants/paths";
 import { NextPage, GetStaticProps } from "next";
 import { Carousel } from "src/components/Carousel";
 import { MovieCard } from "src/components/MovieCard";
@@ -26,9 +24,9 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
   return (
     <>
       <Carousel />
-      <Box maxWidth="1000px" margin="50px auto 100px" >
+      <Box maxWidth="1000px" margin="50px auto 100px">
         <Heading color="#FBFBFB">おすすめ映画</Heading>
-        <Space size={15}/>
+        <Space size={15} />
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
           {recommend.map((value: MovieData, index: number) => (
@@ -43,13 +41,13 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
           ))}
         </Flex>
       </Box>
-      <Box maxWidth="1000px" margin="50px auto 100px" >
+      <Box maxWidth="1000px" margin="50px auto 100px">
         <Heading color="#FBFBFB">公開中映画</Heading>
-        <Space size={15}/>
+        <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 公開中表示 */}
           {nowPlaying.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px" >
+            <Box w="250px" h="350px">
               <MovieCard
                 key={index}
                 title={value.title}
@@ -60,9 +58,9 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
           ))}
         </Flex>
       </Box>
-      <Box maxWidth="1000px" margin="50px auto 100px" >
+      <Box maxWidth="1000px" margin="50px auto 100px">
         <Heading color="#FBFBFB">人気の映画</Heading>
-        <Space size={15}/>
+        <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 人気の表示 */}
           {popular.map((value: MovieData, index: number) => (
@@ -180,7 +178,7 @@ export const getStaticProps: GetStaticProps = async () => {
         value.poster_path !== null &&
         value.overview
     )
-    .splice(1, 9);
+    .splice(1, 12);
   const popular: MovieData[] = po1List
     .concat(
       po2List,
@@ -203,10 +201,10 @@ export const getStaticProps: GetStaticProps = async () => {
         value.poster_path !== null &&
         value.overview
     )
-    .splice(1, 9);
+    .splice(1, 12);
   const recommend: MovieData[] = shuffle([...nowPlaying, ...popular]).splice(
     1,
-    9
+    12
   );
 
   return {
