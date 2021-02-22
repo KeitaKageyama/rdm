@@ -6,7 +6,6 @@ import { Carousel } from "src/components/Carousel";
 import { MovieCard } from "src/components/MovieCard";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
 import axios, { AxiosResponse } from "axios";
-import Link from "next/link";
 
 type MovieData = {
   title: string;
@@ -24,8 +23,6 @@ type Props = {
 const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
   return (
     <>
-      <Text>TOPページ</Text>
-      <Link href={paths.moveList}>映画一覧へ</Link>
       <Carousel />
       <Box maxWidth="1000px" margin="50px auto 100px">
         <Heading color="#FBFBFB">おすすめ映画</Heading>

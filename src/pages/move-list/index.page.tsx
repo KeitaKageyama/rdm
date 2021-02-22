@@ -4,7 +4,6 @@ import {
   Flex,
   Heading,
  } from "@chakra-ui/react"
-import { Text, View } from "src/components/lib";
 import { NextPage, GetStaticProps } from "next";
 import { MovieCard } from "src/components/MovieCard";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
@@ -24,7 +23,6 @@ type Props = {
 const MoveList: NextPage<Props> = ({ popular }) => {
   return (
     <>
-      <Text>公開中映画一覧ページだよ</Text>
       <Box maxWidth="1000px" margin="50px auto" >
         <Heading color="#FBFBFB">公開中映画</Heading>
         <Space size={15}/>
