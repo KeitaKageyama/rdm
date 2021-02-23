@@ -1,6 +1,4 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import { Text, View } from "src/components/lib";
-import { paths } from "src/constants/paths";
 import { NextPage, GetStaticProps } from "next";
 import { Carousel } from "src/components/Carousel";
 import { MovieCard } from "src/components/MovieCard";
