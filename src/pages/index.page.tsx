@@ -28,7 +28,7 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
           {recommend.map((value: MovieData, index: number) => (
-            <Box w="250px" h="400px" key={index}>
+            <Box w="250px" h="350px">
               <MovieCard
                 title={value.title}
                 imagePath={value.poster_path}
