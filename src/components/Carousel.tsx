@@ -2,6 +2,7 @@ import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.css";
+import { colors } from "../styles/theme";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -18,7 +19,7 @@ export const Carousel: FC = () => {
       {/* スライダー本体 */}
       <div
         style={{
-          backgroundColor: "#2B2B2B",
+          backgroundColor: colors.darkGray,
           width: "80vw",
           marginLeft: "auto",
           marginRight: "auto",

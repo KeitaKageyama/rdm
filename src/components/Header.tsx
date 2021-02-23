@@ -15,7 +15,7 @@ import { Spacer as Space } from "src/components/Spacer/Spacer";
 
 export const Header: FC = () => {
   return (
-    <Flex background="#222" alignItems="center" p="0 40px" height="100px">
+    <Flex bg="black" alignItems="center" p="0 40px" height="100px">
       <Box>
         <Heading display="none" size="md">
           rdm (ランダム映画館)
@@ -28,13 +28,13 @@ export const Header: FC = () => {
       <Box>
         <Button variant="link">
           <Link href={paths.random}>
-            <Text color="#fff">ランダム</Text>
+            <Text color="white">ランダム</Text>
           </Link>
         </Button>
         <Space horizontal size="xxl" />
         <Button variant="link">
           <Link href={paths.moveList}>
-            <Text color="#fff">公開中</Text>
+            <Text color="white">公開中</Text>
           </Link>
         </Button>
       </Box>

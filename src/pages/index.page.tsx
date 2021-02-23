@@ -23,7 +23,7 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
     <>
       <Carousel />
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">おすすめ映画</Heading>
+        <Heading color="white">おすすめ映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
@@ -39,7 +39,7 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">公開中映画</Heading>
+        <Heading color="white">公開中映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 公開中表示 */}
@@ -55,7 +55,7 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">人気の映画</Heading>
+        <Heading color="white">人気の映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 人気の表示 */}
