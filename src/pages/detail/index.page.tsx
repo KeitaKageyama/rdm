@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 import { Box, Image, Flex, Text, Button } from "@chakra-ui/react";
 import { Spacer } from "src/components/Spacer/Spacer";
 import styled from "styled-components";
+import { colors } from "../../styles/theme";
 
 const Detail: NextPage = () => {
   const router = useRouter();
@@ -14,7 +15,7 @@ const Detail: NextPage = () => {
   return (
     <Box w="825px" m="0 auto">
       <Spacer size={78} />
-      <Box bg="#2B2B2B" w="100%" h="300px">
+      <Box bg="darkGray" w="100%" h="300px">
         <Image
           src={`https://image.tmdb.org/t/p/w185/${imagePath}`}
           alt="poster"
@@ -58,7 +59,7 @@ const Detail: NextPage = () => {
       </Flex>
       <Spacer size={60} />
       <Box textAlign="center">
-        <Button w="331px" h="40px" bg="#B61F22" color="#fff">
+        <Button w="331px" h="40px" bg="red" color="white">
           <Link href={paths.random}>ランダムで映画を見る</Link>
         </Button>
       </Box>
@@ -70,12 +71,12 @@ const Detail: NextPage = () => {
 const SubImageBox = styled(Box)`
   width: 70px;
   height: 50px;
-  background: #c4c4c4;
+  background: ${colors.lightGray};
 `;
 
 const ActorText = styled(Box)`
-  background: #c4c4c4;
-  color: #000;
+  background: ${colors.lightGray};
+  color: ${colors.black};
   height: 19px;
   line-height: 19px;
   width: 35px;

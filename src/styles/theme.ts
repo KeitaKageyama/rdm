@@ -1,8 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 
 export const colors = {
-  green: "#008E44",
-  red: "#F33613",
+  black: "#222",
+  white: "#fbfbfb",
+  darkGray: "#2b2b2b",
+  gray: "#505050",
+  lightGray: "#c4c4c4",
+  red: "#b61f22",
 } as const;
 
 export const fontSizes = {
