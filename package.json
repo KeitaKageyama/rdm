@@ -16,6 +16,7 @@
     "@material-ui/styles": "^4.11.3",
     "@next/bundle-analyzer": "^9.5.3",
     "@types/react-query": "^1.1.2",
+    "@types/styled-components": "^5.1.7",
     "axios": "^0.21.1",
     "dotenv": "^8.2.0",
     "firebase": "^8.1.1",
