@@ -12,7 +12,14 @@ import {
 } from "@chakra-ui/react";
 import styled from "styled-components";
 
+const randRange = (min: number, max: number) =>
+  Math.floor(Math.random() * (max - min + 1) + min);
+
 const Random: FC = () => {
+  const people = Math.random() < 0.8 ? 5 : randRange(1, 4);
+  const peopleArray = [...Array(people)].map((_, i) => people - i);
+  console.log(peopleArray);
+
   return (
     <Flex marginX="7.84vw" marginY="24vh">
       <Box
@@ -53,7 +60,13 @@ const Random: FC = () => {
             borderColor="black"
             color="white"
             placeholder="人数を選択"
-          ></Select>
+          >
+            {peopleArray.map((value, index) => (
+              <option value={value} key={index}>
+                {value}
+              </option>
+            ))}
+          </Select>
           <Spacer />
           <Select
             bg="black"
