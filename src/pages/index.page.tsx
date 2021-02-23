@@ -176,7 +176,7 @@ export const getStaticProps: GetStaticProps = async () => {
         value.poster_path !== null &&
         value.overview
     )
-    .splice(1, 9);
+    .splice(1, 12);
   const popular: MovieData[] = po1List
     .concat(
       po2List,
@@ -199,10 +199,10 @@ export const getStaticProps: GetStaticProps = async () => {
         value.poster_path !== null &&
         value.overview
     )
-    .splice(1, 9);
+    .splice(1, 12);
   const recommend: MovieData[] = shuffle([...nowPlaying, ...popular]).splice(
     1,
-    9
+    12
   );
 
   return {

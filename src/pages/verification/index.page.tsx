@@ -39,8 +39,9 @@ const Verification: NextPage = () => {
       <Space size={20} />
       <Flexbox>
         <QrArea/>
-        <Space size={40}/>
+        <Space size={500}/>
         <QrArea/>
+        <Space size={500}/>
     </Flexbox>);
       <Link href={paths.index}>
         <Text
@@ -52,6 +53,7 @@ const Verification: NextPage = () => {
           TOP画面へ戻る
         </Text>
       </Link>
+      <Space size={100}/>
     </ContentsArea>
   );
 };
@@ -112,7 +114,8 @@ const Qrback = styled(Box)`
 const Fbox = styled(Flex)`
   justify-content: space-between;
   align-items:center;
-  padding-left:60px;
+  padding-left:80px;
+  padding-top:100px;
 `
 const Fwrap = styled(Flex)`
   width:500px;
