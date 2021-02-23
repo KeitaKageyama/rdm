@@ -7,8 +7,7 @@ import {
   Text,
   Image,
 } from "@chakra-ui/react";
-import React, { useState, useEffect, FC } from "react";
-import styled from "styled-components";
+import React, { FC } from "react";
 
 import { paths } from "src/constants/paths";
 import Link from "next/link";

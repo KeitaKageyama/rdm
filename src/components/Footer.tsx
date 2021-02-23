@@ -1,13 +1,5 @@
-import {
-  Box,
-  Link,
-  Text,
-  Flex,
-  Spacer,
-  Icon,
-  IconButton,
-} from "@chakra-ui/react";
-import React, { useState, useEffect, FC } from "react";
+import { Box, Link, Text, Flex, Icon, IconButton } from "@chakra-ui/react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram } from "react-icons/io";

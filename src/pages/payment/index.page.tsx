@@ -1,9 +1,9 @@
-import React from "react";
-import { Text, View } from "src/components/lib";
+import React, { FC } from "react";
+import { Text } from "src/components/lib";
 import Link from "next/link";
 import { paths } from "src/constants/paths";
 
-const Payment = () => {
+const Payment: FC = () => {
   return (
     <>
       <Text>支払いページ</Text>

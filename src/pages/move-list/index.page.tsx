@@ -25,9 +25,8 @@ const MoveList: NextPage<Props> = ({ popular }) => {
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 映画一覧表示 */}
           {popular.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}

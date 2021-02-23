@@ -1,6 +1,6 @@
-import css from '@styled-system/css'
-import React, { FC } from 'react'
-import styled from 'styled-components'
+import css from "@styled-system/css";
+import React, { FC } from "react";
+import styled from "styled-components";
 import {
   color,
   ColorProps,
@@ -12,16 +12,20 @@ import {
   SpaceProps,
   typography,
   TypographyProps,
-} from 'styled-system'
+} from "styled-system";
 
-type StyledSystemProps = TypographyProps & SpaceProps & LayoutProps & ColorProps & PositionProps
+type StyledSystemProps = TypographyProps &
+  SpaceProps &
+  LayoutProps &
+  ColorProps &
+  PositionProps;
 
-const styledSystemProps = [typography, space, layout, color, position]
+const styledSystemProps = [typography, space, layout, color, position];
 
-type ImageProps = StyledSystemProps & React.ImgHTMLAttributes<HTMLImageElement>
+type ImageProps = StyledSystemProps & React.ImgHTMLAttributes<HTMLImageElement>;
 
-export const Image: FC<ImageProps> = props => {
-  return <ImageRoot {...props}>{props.children}</ImageRoot>
-}
+export const Image: FC<ImageProps> = (props) => {
+  return <ImageRoot {...props}>{props.children}</ImageRoot>;
+};
 
-const ImageRoot = styled('img')<StyledSystemProps>(css({}), styledSystemProps)
+const ImageRoot = styled("img")<StyledSystemProps>(css({}), styledSystemProps);

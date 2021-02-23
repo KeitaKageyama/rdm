@@ -28,9 +28,8 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
           {recommend.map((value: MovieData, index: number) => (
-            <Box w="250px" h="400px">
+            <Box w="250px" h="400px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
@@ -45,9 +44,8 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 公開中表示 */}
           {nowPlaying.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
@@ -62,9 +60,8 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 人気の表示 */}
           {popular.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
