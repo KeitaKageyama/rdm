@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Navigation, Pagination } from "swiper";
 import "swiper/swiper-bundle.css";
-import { colors } from "../styles/theme";
+import { Box } from "@chakra-ui/react";
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -17,14 +17,7 @@ export const Carousel: FC = () => {
   return (
     <>
       {/* スライダー本体 */}
-      <div
-        style={{
-          backgroundColor: colors.darkGray,
-          width: "80vw",
-          marginLeft: "auto",
-          marginRight: "auto",
-        }}
-      >
+      <Box bg="darkGray" width="80vw" marginX="auto">
         <Swiper
           spaceBetween={50}
           slidesPerView={1}
@@ -47,7 +40,7 @@ export const Carousel: FC = () => {
             );
           })}
         </Swiper>
-      </div>
+      </Box>
     </>
   );
 };
