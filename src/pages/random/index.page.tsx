@@ -1,17 +1,25 @@
-import React from "react";
+import React, { FC } from "react";
 import Link from "next/link";
-import { NextPage } from "next";
 import { paths } from "src/constants/paths";
-import { Box, Flex, Select, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Select,
+  Heading,
+  Text,
+  Spacer,
+  Button,
+} from "@chakra-ui/react";
 import styled from "styled-components";
 
-const Random: NextPage = () => {
+const Random: FC = () => {
   return (
     <Flex marginX="7.84vw" marginY="24vh">
       <Box
         w="62.8%"
         bg="#222"
         color="#FBFBFB"
+        height="50.1vh"
         marginRight="8.3%"
         paddingX="30px"
         paddingY="26px"
@@ -38,28 +46,34 @@ const Random: NextPage = () => {
         </Flex>
       </Box>
       <Box flexGrow={1}>
-        <Flex flexDirection="column">
+        <Flex height="100%" flexDirection="column">
+          <Spacer />
           <Select
             bg="#222"
             borderColor="#222"
             color="#FBFBFB"
             placeholder="人数を選択"
           ></Select>
+          <Spacer />
           <Select
             bg="#222"
             borderColor="#222"
             color="#FBFBFB"
             placeholder="日付を選択"
           ></Select>
+          <Spacer />
           <Select
             bg="#222"
             borderColor="#222"
             color="#FBFBFB"
             placeholder="時間を選択"
           ></Select>
-          <p>
-            <a href={paths.payment}>支払いページへ</a>
-          </p>
+          <Spacer />
+          <Link href={paths.payment}>
+            <Button bg="#B61F22" color="#fbfbfb">
+              支払いページへ
+            </Button>
+          </Link>
         </Flex>
       </Box>
     </Flex>
