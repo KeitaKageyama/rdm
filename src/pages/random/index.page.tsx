@@ -17,8 +17,8 @@ const Random: FC = () => {
     <Flex marginX="7.84vw" marginY="24vh">
       <Box
         w="62.8%"
-        bg="#222"
-        color="#FBFBFB"
+        bg="black"
+        color="white"
         height="50.1vh"
         marginRight="8.3%"
         paddingX="30px"
@@ -49,28 +49,28 @@ const Random: FC = () => {
         <Flex height="100%" flexDirection="column">
           <Spacer />
           <Select
-            bg="#222"
-            borderColor="#222"
-            color="#FBFBFB"
+            bg="black"
+            borderColor="black"
+            color="white"
             placeholder="人数を選択"
           ></Select>
           <Spacer />
           <Select
-            bg="#222"
-            borderColor="#222"
-            color="#FBFBFB"
+            bg="black"
+            borderColor="black"
+            color="white"
             placeholder="日付を選択"
           ></Select>
           <Spacer />
           <Select
-            bg="#222"
-            borderColor="#222"
-            color="#FBFBFB"
+            bg="black"
+            borderColor="black"
+            color="white"
             placeholder="時間を選択"
           ></Select>
           <Spacer />
           <Link href={paths.payment}>
-            <Button bg="#B61F22" color="#fbfbfb">
+            <Button bg="red" color="white">
               支払いページへ
             </Button>
           </Link>

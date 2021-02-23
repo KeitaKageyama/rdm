@@ -23,14 +23,13 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
     <>
       <Carousel />
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">おすすめ映画</Heading>
+        <Heading color="white">おすすめ映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" width="100%" flexWrap="wrap">
           {/* おすすめ表示 */}
           {recommend.map((value: MovieData, index: number) => (
-            <Box w="250px" h="400px">
+            <Box w="250px" h="400px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
@@ -40,14 +39,13 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">公開中映画</Heading>
+        <Heading color="white">公開中映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 公開中表示 */}
           {nowPlaying.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
@@ -57,14 +55,13 @@ const Top: NextPage<Props> = ({ recommend, nowPlaying, popular }) => {
         </Flex>
       </Box>
       <Box maxWidth="1000px" margin="50px auto 100px">
-        <Heading color="#FBFBFB">人気の映画</Heading>
+        <Heading color="white">人気の映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 人気の表示 */}
           {popular.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}

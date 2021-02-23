@@ -1,20 +1,12 @@
-import {
-  Box,
-  Link,
-  Text,
-  Flex,
-  Spacer,
-  Icon,
-  IconButton,
-} from "@chakra-ui/react";
-import React, { useState, useEffect, FC } from "react";
+import { Box, Link, Text, Flex, Icon, IconButton } from "@chakra-ui/react";
+import React, { FC } from "react";
 import styled from "styled-components";
 import { Spacer as Space } from "src/components/Spacer/Spacer";
 import { IoLogoFacebook, IoLogoTwitter, IoLogoInstagram } from "react-icons/io";
 
 export const Footer: FC = () => {
   return (
-    <FooterBox bg="#222" w="100%" h="242px" p="77px 50px" color="white">
+    <FooterBox bg="black" w="100%" h="242px" p="77px 50px" color="white">
       <Flex>
         <Link>企業情報</Link>
         <Space size={20} horizontal />
@@ -43,7 +35,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
-          color="fff"
+          color="white"
           aria-label="FacebookIcon"
           icon={<Icon as={IoLogoFacebook} />}
         />
@@ -51,7 +43,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
-          color="fff"
+          color="white"
           aria-label="TwitterIcon"
           icon={<Icon as={IoLogoTwitter} />}
         />
@@ -59,7 +51,7 @@ export const Footer: FC = () => {
         <IconButton
           variant="link"
           fontSize="25px"
-          color="fff"
+          color="white"
           aria-label="InstagramIcon"
           icon={<Icon as={IoLogoInstagram} />}
         />

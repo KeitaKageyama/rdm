@@ -20,14 +20,13 @@ const MoveList: NextPage<Props> = ({ popular }) => {
   return (
     <>
       <Box maxWidth="1000px" margin="50px auto">
-        <Heading color="#FBFBFB">公開中映画</Heading>
+        <Heading color="white">公開中映画</Heading>
         <Space size={15} />
         <Flex justifyContent="space-between" flexWrap="wrap">
           {/* 映画一覧表示 */}
           {popular.map((value: MovieData, index: number) => (
-            <Box w="250px" h="350px">
+            <Box w="250px" h="350px" key={index}>
               <MovieCard
-                key={index}
                 title={value.title}
                 imagePath={value.poster_path}
                 overview={value.overview}
