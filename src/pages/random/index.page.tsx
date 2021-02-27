@@ -10,15 +10,55 @@ import {
   Spacer,
   Button,
 } from "@chakra-ui/react";
+import DateFnsUtils from "@date-io/date-fns";
 import styled from "styled-components";
+import {
+  MuiPickersUtilsProvider,
+  KeyboardDatePicker,
+} from "@material-ui/pickers";
+import { format } from "date-fns";
+import { useForm } from "react-hook-form";
+import * as yup from "yup";
+import { yupResolver } from "@hookform/resolvers/yup";
 
-const randRange = (min: number, max: number) =>
-  Math.floor(Math.random() * (max - min + 1) + min);
+export type FormValues = {
+  people: number;
+  time: string;
+};
+
+const validationSchema = yup.object().shape({
+  people: yup.string().required("人数を入力してください。"),
+  time: yup.string().required("時間帯を選択してください"),
+});
 
 const Random: FC = () => {
-  const people = Math.random() < 0.8 ? 5 : randRange(1, 4);
-  const peopleArray = [...Array(people)].map((_, i) => people - i);
-  console.log(peopleArray);
+  const methods = useForm<Record<keyof FormValues, string>>({
+    mode: "onChange",
+    resolver: yupResolver(validationSchema),
+  });
+
+  const [selectedDate, setSelectedDate] = React.useState<Date | null>(null);
+
+  const { isValid, touched, errors } = methods.formState;
+  const { register, getValues, setValue, setError, trigger } = methods;
+
+  const handleDateChange = (date: Date | null) => {
+    setSelectedDate(date);
+  };
+
+  const onClick = () => {
+    const formatDate = format(selectedDate, "yyyy/MM/dd");
+
+    const { people, time } = getValues();
+    console.log(people);
+    console.log(formatDate);
+    console.log(time);
+    // ここでランダムhookを実行してタイトルと時間と席を決める
+    // 座席などは適当に配列を用意してそれからランダムで引っ張る
+    // 決めたタイトルと時間と席を次のページへ渡すして遷移
+  };
+
+  const canSubmit = isValid && selectedDate;
 
   return (
     <Flex marginX="7.84vw" marginY="24vh">
@@ -59,34 +99,62 @@ const Random: FC = () => {
             bg="black"
             borderColor="black"
             color="white"
+            name="people"
+            ref={register}
             placeholder="人数を選択"
           >
-            {peopleArray.map((value, index) => (
-              <option value={value} key={index}>
-                {value}
-              </option>
-            ))}
+            <option value={1}>1人</option>
+            <option value={2}>2人</option>
+            <option value={3}>3人</option>
           </Select>
+          {touched.people && errors.people && (
+            <>
+              <ErrorText>{errors.people.message}</ErrorText>
+            </>
+          )}
           <Spacer />
-          <Select
-            bg="black"
-            borderColor="black"
-            color="white"
-            placeholder="日付を選択"
-          ></Select>
+          <MuiPickersUtilsProvider utils={DateFnsUtils}>
+            <KeyboardDatePicker
+              disableToolbar
+              variant="inline"
+              format="MM/dd/yyyy"
+              margin="normal"
+              id="date-picker-inline"
+              label="日程選択"
+              value={selectedDate}
+              name="date"
+              ref={register}
+              onChange={handleDateChange}
+            />
+
+            <Spacer />
+          </MuiPickersUtilsProvider>
           <Spacer />
           <Select
             bg="black"
             borderColor="black"
             color="white"
             placeholder="時間を選択"
-          ></Select>
+            name="time"
+            ref={register}
+          >
+            <option value="am">午前</option>
+            <option value="pm">午後</option>
+          </Select>
+          {touched.time && errors.time && (
+            <>
+              <ErrorText>{errors.time.message}</ErrorText>
+            </>
+          )}
           <Spacer />
-          <Link href={paths.payment}>
-            <Button bg="red" color="white">
-              支払いページへ
-            </Button>
-          </Link>
+          <Button
+            disabled={!canSubmit}
+            onClick={onClick}
+            bg="red"
+            color="white"
+          >
+            支払いページへ
+          </Button>
         </Flex>
       </Box>
     </Flex>
@@ -95,6 +163,11 @@ const Random: FC = () => {
 
 const Description = styled(Text)`
   padding-bottom: 18px;
+`;
+
+const ErrorText = styled(Text)`
+  font-size: 16px;
+  color: "#f00";
 `;
 
 export default Random;
