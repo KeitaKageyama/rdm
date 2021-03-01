@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import Link from "next/link";
 import { paths } from "src/constants/paths";
+import { useRouter } from "next/router";
 import {
   Box,
   Flex,
@@ -20,6 +21,7 @@ import { format } from "date-fns";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { queryCache } from "react-query";
 
 export type FormValues = {
   people: number;
@@ -36,6 +38,7 @@ const Random: FC = () => {
     mode: "onChange",
     resolver: yupResolver(validationSchema),
   });
+  const router = useRouter();
 
   const [selectedDate, setSelectedDate] = React.useState<Date | null>(null);
 
@@ -48,14 +51,14 @@ const Random: FC = () => {
 
   const onClick = () => {
     const formatDate = format(selectedDate, "yyyy/MM/dd");
-
     const { people, time } = getValues();
     console.log(people);
     console.log(formatDate);
     console.log(time);
-    // ここでランダムhookを実行してタイトルと時間と席を決める
-    // 座席などは適当に配列を用意してそれからランダムで引っ張る
-    // 決めたタイトルと時間と席を次のページへ渡すして遷移
+    router.push({
+      pathname: paths.payment,
+      query: { people, formatDate, time },
+    });
   };
 
   const canSubmit = isValid && selectedDate;
