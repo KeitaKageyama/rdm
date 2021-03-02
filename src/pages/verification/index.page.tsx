@@ -15,13 +15,29 @@ type MoveValue = {
   index?: number;
 };
 
+const test: MoveValue[] = [
+  {
+    sheet: "あああ",
+    time: "あああ",
+    title: "ああああ",
+    date: "aaaa",
+    index: 1,
+  },
+  {
+    sheet: "あああ",
+    time: "あああ",
+    title: "ああああ",
+    date: "aaaa",
+    index: 1,
+  },
+];
+
 const Verification: NextPage = () => {
   const router = useRouter();
   const { param } = router.query;
-  const moveValues: MoveValue[] = JSON.parse(
-    decodeURIComponent(param as string)
-  );
-  console.log(moveValues);
+  const moveValues: MoveValue[] = param
+    ? JSON.parse(decodeURIComponent(param as string))
+    : test;
 
   return (
     <ContentsArea>
@@ -51,6 +67,7 @@ const Verification: NextPage = () => {
           return (
             <>
               <QrArea
+                key={index}
                 index={index}
                 title={value.title}
                 time={value.time}
