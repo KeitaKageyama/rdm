@@ -52,9 +52,6 @@ const Random: FC = () => {
   const onClick = () => {
     const formatDate = format(selectedDate, "yyyy/MM/dd");
     const { people, time } = getValues();
-    console.log(people);
-    console.log(formatDate);
-    console.log(time);
     router.push({
       pathname: paths.payment,
       query: { people, formatDate, time },

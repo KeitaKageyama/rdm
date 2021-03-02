@@ -6,8 +6,23 @@ import { NextPage } from "next";
 import Link from "next/link";
 import { paths } from "src/constants/paths";
 import { colors } from "../../styles/theme";
+import { useRouter } from "next/router";
+type MoveValue = {
+  sheet: string;
+  time: string;
+  title: string;
+  date: string;
+  index?: number;
+};
 
 const Verification: NextPage = () => {
+  const router = useRouter();
+  const { param } = router.query;
+  const moveValues: MoveValue[] = JSON.parse(
+    decodeURIComponent(param as string)
+  );
+  console.log(moveValues);
+
   return (
     <ContentsArea>
       <Space size={20} />
@@ -30,12 +45,24 @@ const Verification: NextPage = () => {
         </Text>
       </Box>
       <Space size={20} />
+
       <Flexbox>
-        <QrArea />
-        <Space size={500} />
-        <QrArea />
-        <Space size={500} />
+        {moveValues.map((value, index) => {
+          return (
+            <>
+              <QrArea
+                index={index}
+                title={value.title}
+                time={value.time}
+                sheet={value.sheet}
+                date={value.date}
+              />
+              <Space size={500} />
+            </>
+          );
+        })}
       </Flexbox>
+
       <Link href={paths.index}>
         <Text
           color="white"
@@ -56,7 +83,7 @@ const ContentsArea = styled(Box)`
   min-height: 100vh;
 `;
 
-const QrArea: FC = () => {
+const QrArea: FC<MoveValue> = ({ date, index, title, time, sheet }) => {
   return (
     <Qrback>
       <Fbox>
@@ -65,28 +92,28 @@ const QrArea: FC = () => {
         </Box>
         <Box>
           <Fwrap>
-            <Whitetext>一人目</Whitetext>
+            <Whitetext>{index + 1}人目</Whitetext>
             <Space size={70} horizontal />
           </Fwrap>
           <Fwrap>
             <Whitetext>日程</Whitetext>
             <Space size={67} horizontal />
-            <Whitetext>2020/12/08</Whitetext>
+            <Whitetext>{date}</Whitetext>
           </Fwrap>
           <Fwrap>
             <Whitetext>上映時間</Whitetext>
             <Space size={40} horizontal />
-            <Whitetext>19:00</Whitetext>
+            <Whitetext>{time}</Whitetext>
           </Fwrap>
           <Fwrap>
             <Whitetext>タイトル</Whitetext>
             <Space size={40} horizontal />
-            <Whitetext>STAND BY ME&emsp;ドラえもん</Whitetext>
+            <Whitetext>{title}</Whitetext>
           </Fwrap>
           <Fwrap>
             <Whitetext>座席</Whitetext>
             <Space size={67} horizontal />
-            <Whitetext>L32</Whitetext>
+            <Whitetext>{sheet}</Whitetext>
           </Fwrap>
           <Smalltext>
             ※15分前より開場しますのでお早めにお越しください。

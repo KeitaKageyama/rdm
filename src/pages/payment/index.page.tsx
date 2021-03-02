@@ -224,7 +224,13 @@ const Payment: NextPage = () => {
         )}
         <Spacer size={80} />
         <Box>
-          <Button disabled={!isValid} w="300px" bg="red" color="white">
+          <Button
+            onClick={onSubmit}
+            disabled={!isValid}
+            w="300px"
+            bg="red"
+            color="white"
+          >
             決定
           </Button>
         </Box>
